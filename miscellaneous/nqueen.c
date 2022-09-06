@@ -14,9 +14,18 @@ void nQueen(int k, int n) {
       arr[k] = i;
 
       if (k == n - 1) {
-        printf("Solution %d: ", ++sol);
-        for (int i = 0; i < n; i++)
-          printf("%d ", arr[i] + 1);
+        printf("Solution %d:\n", ++sol);
+        for (int r = 0; r < n; r++) {
+          for (int c = 0; c < n; c++) {
+            if (arr[r] == c)
+              printf("Q");
+            else
+              printf("-");
+          }
+
+         printf("\n");
+        } 
+
         printf("\n");
       } else nQueen(k + 1, n);
     }
